@@ -45,13 +45,13 @@ export default function ListPage({ match }) {
     }
 
     const path = match.path;
-    const list = state.lists.find(list => list.id === match.params.listId) || { title: 'Задачи' };
+    const list = state.lists.find(list => list.id === match.params.listId) || { title: 'Tasks' };
     if (path === '/') {
-        list.title = "Задачи"
+        list.title = "Tasks"
     } else if (path === '/important') {
-        list.title = 'Важно'
+        list.title = 'Important'
     } else if (path === '/completed') {
-        list.title = 'Завершенные'
+        list.title = 'Done'
     }
 
     const sortFn = {
@@ -88,7 +88,7 @@ export default function ListPage({ match }) {
                     appContentSelector=".mdc-side-sheet-app-content"
                 >
                     <Layout row justifyContent="between" alignItems="center">
-                        <Typography noMargin>Детали задачи</Typography>
+                        <Typography noMargin>Details</Typography>
 
                         <IconButton onClick={() => setSelectedTodo(null)}>
                             <Icon>close</Icon>

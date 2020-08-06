@@ -37,23 +37,17 @@ export default function AppDrawer({ lists }) {
         <Drawer
             id="app-drawer"
         >
-            <DrawerHeader
+            <DrawerHeader>
                 title="React Todo"
-            >
-                <Layout row justifyContent="between" alignItems="center">
-                    <IconButton onClick={() => actions.signOutUser()} title="Выйти">
-                        <Icon>exit_to_app</Icon>
-                    </IconButton>
-                </Layout>
             </DrawerHeader>
 
             <DrawerContent>
                 <ListGroup>
                     <List>
                         {[
-                            { title: 'Задачи', icon: 'home', to: '/', exact: true },
-                            { title: 'Важно', icon: 'star', to: '/important' },
-                            { title: 'Завершенные', icon: 'event', to: '/completed' },
+                            { title: 'Tasks', icon: 'home', to: '/', exact: true },
+                            { title: 'Important, icon: 'star', to: '/important' }, 
+                            { title: 'Done', icon: 'event', to: '/completed' },
                         ].map(item =>
                             <ListItem
                                 key={item.icon}
@@ -102,7 +96,7 @@ export default function AppDrawer({ lists }) {
                         {isListFormOpen ?
                             <form onSubmit={handleSubmit}>
                                 <TextField
-                                    placeholder="Новый список"
+                                    placeholder="New List"
                                     value={listTitle}
                                     onChange={(e) => setListTitle(e.target.value)}
                                     fullWidth
@@ -113,7 +107,7 @@ export default function AppDrawer({ lists }) {
                             <Button
                                 icon={<Icon>add</Icon>}
                                 onClick={() => setListFormOpen(true)}
-                            >Добавить список</Button>
+                            >Add List</Button>
                         }
                     </Layout>
                 </ListGroup>

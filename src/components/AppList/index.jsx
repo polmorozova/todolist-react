@@ -46,9 +46,9 @@ export default function AppList({ lists }) {
                 <ListGroup>
                     <List>
                         {[
-                            { title: 'Задачи', icon: 'home', to: '/', exact: true },
-                            { title: 'Важно', icon: 'star', to: '/important' },
-                            { title: 'Завершенные', icon: 'event', to: '/completed' },
+                            { title: 'Tasks', icon: 'home', to: '/', exact: true },
+                            { title: 'Important', icon: 'star', to: '/important' },
+                            { title: 'Done', icon: 'event', to: '/completed' },
                         ].map(item =>
                             <ListItem
                                 key={item.icon}
@@ -97,7 +97,7 @@ export default function AppList({ lists }) {
                         {isListFormOpen ?
                             <form onSubmit={handleSubmit}>
                                 <TextField
-                                    placeholder="Новый список"
+                                    placeholder="New List"
                                     value={listTitle}
                                     onChange={(e) => setListTitle(e.target.value)}
                                     fullWidth
@@ -108,7 +108,7 @@ export default function AppList({ lists }) {
                             <Button
                                 icon={<Icon>add</Icon>}
                                 onClick={() => setListFormOpen(true)}
-                            >Добавить список</Button>
+                            >Add List</Button>
                         }
                     </Layout>
                 </ListGroup>

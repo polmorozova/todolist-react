@@ -18,7 +18,7 @@ export default function TodoDetails({ todo }) {
         <aside className="todo-details">
             <form onSubmit={changeTaskTodo} >
                 <TextField
-                    placeholder="Название"
+                    placeholder="Name"
                     value={changeTask}
                     onChange={(e) => setChangeTask(e.target.value)}
                 />
